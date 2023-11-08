@@ -1,42 +1,19 @@
-# Astro Starter Kit: Basics
+# How to Be a Futurist, Special Topics in Technology Innovation and Entrepreneurship
+### ENGIN 183/283 FALL 2023 @ UC Berkeley
+This website is the marketing website for the book created in the course *ENGIN 183/283
+how to be a futurist* at Berkeley during the fall of 2023. The purpose is to promote the book by 
+including information and pictures about the book, links to social media accounts or other marketing materials,
+and to add blog posts or other marketing related content directly on the site.
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is a collaboration between marketing team A and B.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## The Book
+The book features a business analysis of different startups in the sectors healthcare, AI and blockchain. It features business profiles
+of different startups with successfactors. The book is a product of the analysis done throughout the semester by the Berkeley students taking the
+course. It also features analytics derived from the business profiles and a conclusion. It can be purchased on Amazon both as a hard copy or an e-book after
+the semester ends.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -49,6 +26,16 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Project Structure
+This website is built using Astro and does not include a backend server.
+### Components
+Includes all components that can be reused on pages throughout the website.
+### Layouts
+Defines a overall layouts which can be with different pages.
+### Pages
+The different web pages, utilizing layout and components to form the overall page.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+More information about this can be found at [Astro](https://docs.astro.build/en/install/auto/)
+
+## Hosting
+The page is hosted using cloudfare.
