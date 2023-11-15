@@ -1,11 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import book_placeholder from './public/book-placeholder.jpg';
 ---
 
 <Layout title="book">
 	<main class="flex-column justify-center items-center">
-		<h1 class="text-3xl text-center text-gray-700 mt-10">Why Altavista Failed and Google Succeeded</h1>
+		<h1 class="text-3xl text-center text-gray-700 mt-10">How to Be a Futurist</h1>
+		<p class="text-center text-gray-700 mt-5">Subtitle Goes Here</p>
+		<div class=" w-80 mb-20 mt-10 shadow-sm mx-auto">
+			<Image src={book_placeholder} alt="Picture of the book" class="w-full" />
+		</div>
+		<div class="text-center text-gray-700 mx-[20%]">
+			<p>
+				"<em>How to Be a Futurist</em> is a book about the future of thinking.
+				It is a book about the future of thinking about the future. 
+				It is a book about the future of thinking about the future of thinking about the future. 
+				It is a book about the future of thinking about the future of thinking about the future of thinking about the future. 
+				It is a book about the future of thinking about the future of thinking about 
+				the future of thinking about the future of thinking about the future.
+				It is a book about the future of thinking about the future of thinking about the future
+				of thinking about the future of thinking about the future of thinking about the future.""
+			</p>
+		</div>
+
 	</main>
 </Layout>
-
+			
 
