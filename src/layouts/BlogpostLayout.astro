@@ -1,0 +1,20 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  frontmatter: {
+    title: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title=`${frontmatter.title}`>
+  <article
+    class="prose prose-headings:text-gray-600 prose-h1:font-normal prose-h1:underline-offset-8 prose-p:text-gray-700
+mx-auto mt-12 px-4"
+  >
+    <slot />
+  </article>
+</Layout>
