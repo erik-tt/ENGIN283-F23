@@ -1,19 +1,18 @@
 ---
-import { Image } from 'astro:assets';
-import instagram from '../assets/instagram.svg';
-import linkedin from '../assets/linkedin.svg';
+import { Image } from "astro:assets";
+import instagram from "../assets/instagram.svg";
+import linkedin from "../assets/linkedin.svg";
 ---
 
-<div class="bottom-0 text-center p-6 mt-36 border-t-2">
-    <p> Made with ❤️ from students in ENGIN 183/283</p>
-    
-    <div class="flex justify-center">
-    <a href="https://www.linkedin.com" class="p-5 ">
-        <Image src={linkedin} alt="Linkedin did not load" class="w-5"/>
+<div class="bottom-0 mt-36 border-t-2 p-6 text-center">
+  <p>Made with ❤️ from students in ENGIN 183/283</p>
+
+  <div class="flex justify-center">
+    <a href="https://www.linkedin.com" class="p-5">
+      <Image src={linkedin} alt="Linkedin did not load" class="w-5" />
     </a>
-    <a href="https://www.instagram.com" class="p-5 ">
-        <Image src={instagram} alt="Instagram did not load" class="w-5"/>
+    <a href="https://www.instagram.com" class="p-5">
+      <Image src={instagram} alt="Instagram did not load" class="w-5" />
     </a>
-    </div>
-    </div>
+  </div>
 </div>
