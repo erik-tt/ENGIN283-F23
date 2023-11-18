@@ -1,0 +1,54 @@
+
+<nav class="bg-gray-800 ">
+    <div class="relative flex items-center justify-between h-16 px-5">
+        <div class="flex-shrink-0 flex items-center">
+            <a href="/" class="text-white font-bold text-xl">How to Be a Futurist</a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+                <a href="/about-authors" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About The Authors</a>
+                <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+            </div>
+        </div>
+
+        <!-- Hamburger menu -->
+        <div id="menu" class="md:hidden" >
+                <span class="material-symbols-outlined text-white cursor-pointer">
+                    menu
+                </span>
+        </div>
+    </div>
+     <!-- Responsive Navigation Links -->
+     <div class="md:hidden hidden text-right" id="responsiveMenu">
+        <a href="/about-authors" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About The Authors</a>
+        <a href="/blog" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+    </div>
+</nav>
+
+<script is:inline>
+    function addListeners() {
+        const hamburgerMenu = document.getElementById('menu');
+        if (hamburgerMenu) hamburgerMenu.addEventListener('click', toggleMenu);
+    }
+
+    /**
+     * Toggles the responsive menu for the navbar
+     */
+   function toggleMenu() {
+        const responsiveMenu = document.getElementById('responsiveMenu');
+
+        if (responsiveMenu) {
+            responsiveMenu.classList.toggle('hidden');
+        }
+      }
+
+    addListeners();
+
+  // Runs on view transitions navigation
+  document.addEventListener('astro:after-swap', addListeners);
+
+ 
+</script>
+
