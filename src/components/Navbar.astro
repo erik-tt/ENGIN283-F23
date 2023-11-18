@@ -14,11 +14,37 @@
         </div>
 
         <!-- Hamburger menu -->
-        <div class="md:hidden">
+        <div id="menu" class="md:hidden" >
                 <span class="material-symbols-outlined text-white cursor-pointer">
                     menu
                 </span>
         </div>
     </div>
+     <!-- Responsive Navigation Links -->
+     <div class="md:hidden hidden text-right" id="responsiveMenu">
+        <a href="/about-authors" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About The Authors</a>
+        <a href="/blog" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+    </div>
 </nav>
+
+<script>
+
+    const hamburgerMenu = document.getElementById('menu');
+    if (hamburgerMenu) hamburgerMenu.addEventListener('click', toggleMenu);
+
+    /**
+     * Toggles the responsive menu for the navbar
+     */
+   function toggleMenu() {
+    var responsiveMenu = document.getElementById('responsiveMenu');
+    if (responsiveMenu) {
+         // Use the 'hidden' class instead of 'toggle'
+         if (responsiveMenu.classList.contains('hidden')) {
+            responsiveMenu.classList.remove('hidden');
+        } else {
+            responsiveMenu.classList.add('hidden');
+        }
+    }
+  }
+</script>
 
