@@ -27,24 +27,28 @@
     </div>
 </nav>
 
-<script>
-
-    const hamburgerMenu = document.getElementById('menu');
-    if (hamburgerMenu) hamburgerMenu.addEventListener('click', toggleMenu);
+<script is:inline>
+    function addListeners() {
+        const hamburgerMenu = document.getElementById('menu');
+        if (hamburgerMenu) hamburgerMenu.addEventListener('click', toggleMenu);
+    }
 
     /**
      * Toggles the responsive menu for the navbar
      */
    function toggleMenu() {
-    var responsiveMenu = document.getElementById('responsiveMenu');
-    if (responsiveMenu) {
-         // Use the 'hidden' class instead of 'toggle'
-         if (responsiveMenu.classList.contains('hidden')) {
-            responsiveMenu.classList.remove('hidden');
-        } else {
-            responsiveMenu.classList.add('hidden');
+        const responsiveMenu = document.getElementById('responsiveMenu');
+
+        if (responsiveMenu) {
+            responsiveMenu.classList.toggle('hidden');
         }
-    }
-  }
+      }
+
+    addListeners();
+
+  // Runs on view transitions navigation
+  document.addEventListener('astro:after-swap', addListeners);
+
+ 
 </script>
 
