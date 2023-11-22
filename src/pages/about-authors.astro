@@ -1,20 +1,76 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import book_placeholder from "../assets/book-placeholder.jpg";
+import classpicture from "../assets/class-picture.png";
 ---
 
 <Layout title="authors">
   <main class="flex-column items-center justify-center">
     <h1 class="mt-10 text-center text-3xl text-gray-700">
-      Picture of all the authors
+      About The Authors
     </h1>
-    <p class="mt-5 text-center text-gray-700">Subtitle Goes Here</p>
-    <div class="wx-10 mx-auto mb-20 mt-10 w-80 shadow-sm">
-      <Image src={book_placeholder} alt="Picture of the class" class="w-full" />
+    <p class="mt-5 text-center text-gray-700">ENGIN 183/283 Class of Fall 2023</p>
+    <div class="mx-auto mb-20 mt-10 w-3/4 shadow-sm">
+      <Image src={classpicture} alt="Picture of the class" class="w-full" />
     </div>
-    <div class="mx-[20%] text-center text-gray-700">
-      <p></p>
+    <div class="mx-[20%] text-left text-gray-700">
+      <p>
+        This book was written by the ENGIN 183/283 <i>Future of Technology: How Innovators Critically Examine Game Changing and Time Wasting Technologies</i>
+        class of Fall 2023. Throughout the semester the students have engaged in lectures teaching them about entrepreneurship and given them an introduction
+        to the technology domains analyzed in the book. There has also been a series of guest lectures from entrepreneurs, industry experts, and academics throughout
+        the semester to give the students a more in depth understanding of the topics. Throughout the semester the students have individually conducted business analysis
+        on different startups, creating business profiles that lay the foundation for the success factors and content in the book. Towards the end of the semester
+        the students divided into teams working on different aspects of the book and collaborated to create the final product, much like a startup would. 
+      </p>
+
+      <h2 class="mt-5 text-center text-2xl text-gray-700">
+        Production
+      </h2>
+      <p>Ainoa Palomino Perez, Alex Topp, Brandon Pooner, Chaitra Raghupathi, Chun Yin Wang, Davita Verma, Frederic Puzicha, Jafer Snipes, Kabeer Andrabi, Mario Saiz Rubio, Saman Ali, Shrey Aeron</p>
+
+
+      <h2 class="mt-5 text-center text-2xl text-gray-700">
+        Analytics
+      </h2>
+      <p> Anny Moreira da Silveira, Arnav Singhvi, Avikam Chauhan, Lindsay Fokwa Djouka, Mathieu Cyril Auguste Despres, Meritxell Louise Tronc, Yuhan Wen, Yuting Huang 
+        Chang Ding, Daniel Quiroz, Magnus Lovhoiden, Mehul Jaiswal, Phil Xie, Serena Mohanty, Sunay Dagli
+      </p>
+
+      <h2 class="mt-5 text-center text-2xl text-gray-700">
+        Editorial
+      </h2>
+      <p>Charles Ming, Krish Gujral, Mohamad Alattas, Ousman Camara, Rachael Lamden
+        Maria Denna, Michelle Singer, Priyanka Krishna, Stephen Liu, Suhani Ramchandra
+      </p>
+
+      <h2 class="mt-5 text-center text-2xl text-gray-700">
+        Design
+      </h2>
+      <p>
+        Ashwat Chidambaram, Daniel Sitompul, Janice Liu, Jennifer Akaade, John Brechbill, Sophie Wiener, Tasmia Rahman,
+        Allison Yuan, Catherine Zhao, David Garza, Jannie Zhou, Jisoo Jung, Madeline Kim, Rhona Huang, Riya Thakkar
+      </p>
+
+      <h2 class="mt-5 text-center text-2xl text-gray-700">
+        Marketing
+      </h2>
+      <p>
+        Cormack Fell, Erik Torvbraaten, Handy Pranata, Patrick Deely, Roberto Carlos Hernandez Wesche, Samantha Chang, Serena Ong, 
+        Aditya Kwatra, Chris Raptopoulos, David Duarte, Mikkel Svartveit, Nathaniel Irwan, Shivam Singhal, Venkatesh Ravi
+      </p>
+
+      <h1 class="mt-10 text-center text-3xl text-gray-700">
+        Teaching Team
+      </h1>
+
+      <h2 class="mt-5 text-center text-2xl text-gray-700">
+        Instructor: Luke Kowalski
+      </h2>
+
+      <h2 class="mt-5 text-center text-2xl text-gray-700">
+        Course coordinator: Rachel Eizner
+      </h2>
+
     </div>
   </main>
 </Layout>
