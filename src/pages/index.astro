@@ -1,30 +1,241 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import book_cover from "../assets/front-cover.png";
+import book_placeholder from "../assets/front-cover.png";
+import headerVideo from "../assets/header-video.mp4";
+import blockchain from "../assets/blockchain.png";
+import ai from "../assets/ai.png";
+import healthcare from "../assets/healthcare.png";
 ---
 
 <Layout title="book">
-  <main class="flex-column items-center justify-center">
-    <h1 class="mt-10 text-center text-3xl text-gray-700">
-      Decoding Startup Success Factors
-    </h1>
-    <p class="mt-5 text-center text-gray-700">a UC Berkeley Analysis of AI, Blockchain, and Healthcare Company Profiles</p>
-    <div class="mx-auto mb-20 mt-10 w-80 shadow-sm">
-      <Image src={book_cover} alt="Picture of the book" class="w-full" />
+  <!-- Scrollable Video Header -->
+  <header class="scroll-header">
+    <video id="headerVideo" class="video-bg" autoplay loop playsinline muted>
+      <source src={headerVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Mute/Unmute Button -->
+    <button id="muteButton" class="mute-button">Mute</button>
+
+    <!-- Title and Subtitle Container -->
+    <div class="title-container">
+      <h1 class="video-title">Decoding Startup Success Factors:</h1>
+      <p class="video-subtitle">A UC Berkeley Analysis of AI, Blockchain, and Healthcare Company Profiles</p>
     </div>
-    <div class="mx-[20%] text-center text-gray-700">
-      <p>
-        Why do some startups make it and others do not? 
-        <em>Decoding Startup Success Factors: a UC Berkeley Analysis of AI, Blockchain, and Healthcare Company Profiles</em>, 
-        is a book made up of multiple business profiles from startups in the AI, blockchain and Healthcare sectors 
-        written by UC Berkeley students. It features some of the most relevant business profiles for the reader to 
-        gain insights into specific companies. It also features data aggregated from many more profiles to give the reader insights 
-        into the general success factors of startups in the different business areas. This book is valuable 
-        to all entrepreneurs or aspiring entrepreneurs wanting to learn and gain insights into what separates that 
-        companies the make it from the ones that do not. The book can be found on Amazon and can be purchased both 
-        as a digital and a paperback version.
-      </p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="combined-container">
+      <!-- Text Container -->
+      <div class="text-container">
+        <p>
+          Why do some startups make it and others do not? <em>Decoding Startup Success Factors: a UC Berkeley Analysis of AI, Blockchain, and Healthcare Company Profiles</em> is a book made up of multiple business profiles from startups in the AI, blockchain and Healthcare sectors written by UC Berkeley students. It features some of the most relevant business profiles for the reader to gain insights into specific companies, along with data aggregated from many more profiles to give the reader insights into the general success factors of startups in the different business areas. This book is valuable to all entrepreneurs or aspiring entrepreneurs wanting to learn and gain insights into what separates that companies the make it from the ones that do not. The book can be found on Amazon and can be purchased both as a digital and a paperback version.
+        </p>
+      </div>
+
+      <!-- Image Container -->
+      <div class="image-container">
+        <Image src={book_placeholder} alt="Picture of the book" class="book-image" />
+      </div>
     </div>
   </main>
+
+<div class="centered-text">
+  <p>Ready to unlock your future?</p>
+</div>
+
+
+  <!-- Buy Now Button -->
+  <div class="buy-now-container flex justify-center mt-5">
+    <button class="buy-now-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      BUY NOW!
+    </button>
+  </div>
+
+<div class="icons-row">
+  <div class="icon-container">
+    <Image src={blockchain} alt="Blockchain" class="icon" />
+    <p class="icon-caption">Learn more about the booming space of blockchain! It has revolutionized supply chains, but it is also used for many other applications. See how startups in this space deal with the security challenges and regulatory obstacles, in addition to the many other facets of business in this emerging sector.</p>
+  </div>
+  <div class="icon-container">
+    <Image src={ai} alt="AI" class="icon" />
+    <p class="icon-caption">With the rapid growth of ChatGPT, AI has entered the mainstream, and it is now a hotbed for investment. It seems like a new AI startup is born nearly everyday now, but you can learn how to differentiate yourself from this book!</p>
+  </div>
+  <div class="icon-container">
+    <Image src={healthcare} alt="Healthcare" class="icon" />
+    <p class="icon-caption">The safety-critical space of healthcare is ripe with opportunity. However, many startups (some infamously) fail to deliver on their promises. Learn how to grow and prosper in this challenging, yet rewarding field.</p>
+  </div>
+</div>
+
 </Layout>
+
+<style>
+  .scroll-header {
+    width: 100%;
+    z-index: 1000;
+    position: relative;
+  }
+
+  .video-bg {
+    width: 100%;
+    opacity: 0.8;
+  }
+
+  .title-container {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1010;
+  }
+
+  .video-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .video-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .main-content {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .combined-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .text-container {
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.6;
+    margin-right: 10px;
+  }
+
+  .image-container {
+    max-width: 300px;
+    flex-shrink: 0;
+  }
+
+  .book-image {
+    width: 100%;
+    height: auto;
+  }
+
+.buy-now-container {
+  margin-top: 2rem; /* Space above the button */
+  margin-bottom: 2.5rem; /* Additional space below the button */
+  display: flex;
+  justify-content: center;
+}
+
+.buy-now-button {
+  background-color: #003262; /* Blue color */
+  color: #FDB515; /* Gold color for text */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold font */
+  padding: 15px 30px; /* Increased padding for a larger button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-now-button:hover {
+  background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+.centered-text {
+  text-align: center;
+  margin: 20px 0; /* Adjust the margin as needed *
+  font-size: 1.5rem; /* Slightly larger font size */
+  font-weight: bold; /* Bold font */
+}
+
+
+  .mute-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1020;
+  }
+
+.icons-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* Adjust space between icons */
+  margin-top: 20px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: #f5f5f5;
+  width: 250px; /* Fixed width for each container */
+  height: 300px; /* Fixed height for each container */
+  border-radius: 10px;
+  flex-grow: 1; /* Makes all boxes grow to fill the space */
+  flex-basis: 250px; /* Sets a base width for each box */
+  text-align: center;
+}
+
+.icon {
+  width: 100px; /* Icon size */
+  height: auto;
+  margin-bottom: 10px; /* Space between icon and caption */
+}
+
+.icon-caption {
+  font-size: 0.9rem;
+}
+
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('headerVideo');
+    const muteButton = document.getElementById('muteButton');
+
+    if (video && muteButton) {
+      // Cast video to HTMLVideoElement to access video-specific properties
+      const videoElement = video as HTMLVideoElement;
+
+      // Set initial volume (video starts muted)
+      videoElement.volume = 0.3;
+
+      // Toggle mute/unmute
+      muteButton.addEventListener('click', function() {
+        if (videoElement.muted) {
+          videoElement.muted = false;
+          muteButton.textContent = 'Unmute';
+        } else {
+          videoElement.muted = true;
+          muteButton.textContent = 'Mute';
+        }
+      });
+    }
+  });
+</script>

@@ -1,68 +1,53 @@
-<nav class="bg-white text-gray-700 shadow">
-  <div class="relative flex h-16 items-center justify-between px-5">
+<nav class="fixed bg-white text-gray-700 shadow w-full">
+  <div class="relative flex h-12 items-center justify-between px-5"> <!-- Reduced height -->
     <div class="flex flex-shrink-0 items-center">
-      <a href="/" class="text-xl font-medium">Decoding Startup Success Factors</a>
+      <a href="/" class="text-xl font-medium text-FDB515">How to Be a Futurist</a>
     </div>
 
-    <!-- Navigation Links -->
-    <div class="hidden md:block">
-      <div class="ml-10 flex items-baseline space-x-4">
-        <a
-          href="/about-authors"
-          class="rounded-md px-3 py-2 text-sm font-medium transition hover:bg-gray-100"
-        >
-          About The Authors
-        </a>
-        <a
-          href="/blog"
-          class="rounded-md px-3 py-2 text-sm font-medium transition hover:bg-gray-100"
-        >
-          Blog
-        </a>
+    <!-- Hamburger menu always visible -->
+    <div id="menu" class="relative">
+      <span class="material-symbols-outlined cursor-pointer text-FDB515">menu</span>
+
+      <!-- Dropdown menu positioned below the hamburger icon -->
+      <div class="hidden absolute top-full right-0 bg-white shadow-md w-48" id="responsiveMenu">
+        <a href="/about-authors" class="block px-3 py-2 text-sm font-medium text-003262 hover:bg-gray-100">About The Authors</a>
+        <a href="/blog" class="block px-3 py-2 text-sm font-medium text-003262 hover:bg-gray-100">Blog</a>
       </div>
     </div>
-
-    <!-- Hamburger menu -->
-    <div id="menu" class="md:hidden">
-      <span class="material-symbols-outlined cursor-pointer"> menu</span>
-    </div>
-  </div>
-  <!-- Responsive Navigation Links -->
-  <div class="hidden text-right md:hidden" id="responsiveMenu">
-    <a
-      href="/about-authors"
-      class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100"
-    >
-      About The Authors
-    </a>
-    <a
-      href="/blog"
-      class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100"
-    >
-      Blog
-    </a>
   </div>
 </nav>
 
-<script is:inline>
+<script>
   function addListeners() {
     const hamburgerMenu = document.getElementById("menu");
-    if (hamburgerMenu) hamburgerMenu.addEventListener("click", toggleMenu);
-  }
-
-  /**
-   * Toggles the responsive menu for the navbar
-   */
-  function toggleMenu() {
-    const responsiveMenu = document.getElementById("responsiveMenu");
-
-    if (responsiveMenu) {
-      responsiveMenu.classList.toggle("hidden");
-    }
+    if (hamburgerMenu) hamburgerMenu.addEventListener("click", function() {
+      const responsiveMenu = document.getElementById("responsiveMenu");
+      if (responsiveMenu) {
+        responsiveMenu.classList.toggle("hidden");
+      }
+    });
   }
 
   addListeners();
 
-  // Runs on view transitions navigation
+  // Reattach event listener on navigation transitions
   document.addEventListener("astro:after-swap", addListeners);
 </script>
+
+<style>
+  nav.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 1100; /* Ensure it stays on top */
+    background-color: #003262; /* Solid white background */
+  }
+
+  .text-FDB515 {
+    color: #FDB515;
+  }
+
+  .text-003262 {
+    color: #003262;
+  }
+</style>
