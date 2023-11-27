@@ -49,4 +49,4 @@ More information about this can be found at [Astro](https://docs.astro.build/en/
 
 ## Hosting
 
-The page is hosted using cloudfare.
+The page is hosted using Cloudflare.
