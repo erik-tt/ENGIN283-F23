@@ -2,18 +2,30 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import book_placeholder from "../assets/book-placeholder.jpg";
+import headerVideo from "../assets/header-video.mp4";
 ---
 
 <Layout title="book">
-  <main class="flex-column items-center justify-center">
-    <h1 class="mt-10 text-center text-3xl text-gray-700">
-      How to Be a Futurist
-    </h1>
-    <p class="mt-5 text-center text-gray-700">Subtitle Goes Here</p>
-    <div class="mx-auto mb-20 mt-10 w-80 shadow-sm">
-      <Image src={book_placeholder} alt="Picture of the book" class="w-full" />
+  <!-- Scrollable Video Header -->
+  <header class="scroll-header">
+    <video id="headerVideo" class="video-bg" autoplay loop playsinline muted>
+      <source src={headerVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Mute/Unmute Button -->
+    <button id="muteButton" class="mute-button">Mute</button>
+
+    <!-- Title and Subtitle Container -->
+    <div class="title-container">
+      <h1 class="video-title">Decoding Startup Success Factors:</h1>
+      <p class="video-subtitle">A UC Berkeley Analysis of AI, Blockchain, and Healthcare Company Profiles</p>
     </div>
-    <div class="mx-[20%] text-center text-gray-700">
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-row items-center justify-center main-content">
+    <div class="content-container text-container flex justify-center items-center mx-[20%] text-center text-gray-700">
       <p>
         "<em>How to Be a Futurist</em> is a book about the future of thinking.
         It is a book about the future of thinking about the future. It is a book
@@ -24,8 +36,151 @@ import book_placeholder from "../assets/book-placeholder.jpg";
         future of thinking about the future of thinking about the future. It is
         a book about the future of thinking about the future of thinking about
         the future of thinking about the future of thinking about the future of
-        thinking about the future.""
+        thinking about the future."
       </p>
     </div>
+    <div class="content-container image-container flex justify-center items-center mx-auto mb-20 mt-10">
+      <Image src={book_placeholder} alt="Picture of the book" class="w-full h-full" />
+    </div>
   </main>
+
+  <!-- Buy Now Button -->
+  <div class="buy-now-container flex justify-center mt-5">
+    <button class="buy-now-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      BUY NOW!
+    </button>
+  </div>
 </Layout>
+
+<style>
+  .scroll-header {
+    width: 100%;
+    z-index: 1000;
+    position: relative;
+  }
+
+  .video-bg {
+    width: 100%;
+    opacity: 0.8;
+  }
+
+  .title-container {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1010;
+  }
+
+  .video-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .video-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .main-content {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-container {
+    width: 300px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    display: flex; /* Added for flex layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    overflow: hidden; /* Optional: to handle overflowing content */
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-gray-700 {
+    color: #4a5568;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .h-full {
+    height: 100%;
+  }
+.buy-now-container {
+  margin-top: 2rem; /* Adjust the margin as needed */
+}
+
+.buy-now-button {
+  background-color: #003262; /* Blue color */
+  color: #FDB515; /* White text */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold font */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.buy-now-button:hover {
+  background-color: #2b6cb0; /* Darker blue on hover */
+}
+  .mute-button {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1020;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('headerVideo');
+    const muteButton = document.getElementById('muteButton');
+
+    if (video && muteButton) {
+      // Cast video to HTMLVideoElement to access video-specific properties
+      const videoElement = video as HTMLVideoElement;
+
+      // Set initial volume (video starts muted)
+      videoElement.volume = 0.3;
+
+      // Toggle mute/unmute
+      muteButton.addEventListener('click', function() {
+        if (videoElement.muted) {
+          videoElement.muted = false;
+          muteButton.textContent = 'Unmute';
+        } else {
+          videoElement.muted = true;
+          muteButton.textContent = 'Mute';
+        }
+      });
+    }
+  });
+</script>
+
