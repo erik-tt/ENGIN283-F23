@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import instagram from "../assets/instagram.svg";
 import linkedin from "../assets/linkedin.svg";
+import berk from "../assets/berk.png";
+import scet from  "../assets/scet.png";
 ---
 
 <div class="bottom-0 mt-36 border-t-2 p-6 text-center">
@@ -14,5 +16,16 @@ import linkedin from "../assets/linkedin.svg";
     <a href="https://instagram.com/startupsuccessfactors?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr " class="p-5">
       <Image src={instagram} alt="Instagram did not load" class="w-5" />
     </a>
+  </div>
+
+  <!-- Adding Footer with Images -->
+  <div class="flex justify-between items-center mt-6">
+
+    <!-- Left Corner Image -->
+    <Image src={berk} alt="Berk Logo" class="footer-img" width="200" height="200" />
+
+    <!-- Right Corner Image -->
+    <Image src={scet} alt="Scet Logo" class="footer-img" width="200" height="200" />
+
   </div>
 </div>
